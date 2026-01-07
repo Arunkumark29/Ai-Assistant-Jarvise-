@@ -5,7 +5,7 @@ import About from './Components/About';
 import Guide from './Components/Guide';
 import SignIn from './Components/SignIn';
 import Home from './Components/Home';
-import SignUp from './Components/Signup';
+import SignUp from './Components/SignUp';
 import CommandManager from './Components/CommandManager';
 import ProfilePage from './Components/ProfilePage';
 
