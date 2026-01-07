@@ -1,0 +1,277 @@
+/* ---------------- JARVIS THEME (Your Existing Code with Fixes) ---------------- */
+.jarvis-layout {
+  flex: 1;
+  display: flex;
+  background: linear-gradient(to bottom, #0f1a2b, #070b16);
+  position: relative;
+}
+
+.left-panel {
+  flex: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-right: 2px solid yellow;
+  box-shadow: 2px 0 10px yellow;
+}
+
+.right-panel {
+  width: 80%;
+  flex: 2;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* ✅ Center welcome box initially */
+  padding: 1rem;
+  gap: 1rem;
+  overflow: hidden;  
+  background: transparent; 
+  border: none;
+  position: relative;
+  min-height: 0;
+}
+
+/* Speak Button */
+.speak-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: cyan;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+.speak-btn:hover {
+  background-color: #00e0e0;
+}
+
+/* Command Box */
+.command-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00fff7;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0, 255, 247, 0.2);
+  text-align: center;
+  margin: auto;
+}
+
+/* Send Button */
+.send-btn {
+  background-color: cyan;
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.2s ease;
+  transform: rotate(-90deg);
+}
+
+.send-btn:hover {
+  transform: rotate(-90deg) scale(1.15);
+  text-shadow: 0 0 8px cyan, 0 0 15px cyan;
+}
+
+/* Chat Footer */
+.chat-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+}
+
+.chat-input {
+  flex: 0 0 70%;
+  padding: 0.6rem;
+  border: 1.5px solid #00f0ff;
+  border-radius: 8px;
+  background-color: #0c0c1e;
+  color: white;
+  outline: none;
+}
+
+.chat-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Helmet Styles */
+.helmet-holo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.helmet-holo::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 400px;
+  border: 3px solid rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.9),
+              inset 0 0 20px rgba(0, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.helmet-holo img {
+  width: 240px;
+  height: 380px;
+  object-fit: cover;
+  border: 3px solid rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+  z-index: 2;
+}
+
+.wave {
+  position: absolute;
+  width: 260px;
+  height: 340px;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  animation: wavePulse 4s infinite;
+  z-index: 0;
+}
+
+.wave:nth-child(2) {
+  animation-delay: 1.3s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: 2.6s;
+}
+
+.helmet-holo::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 320px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.05) 0px,
+    rgba(0, 255, 255, 0.05) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes wavePulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Chat Output (AI response text) */
+.chat-output {
+  max-width: 700px;
+  width: 100%;
+  background: transparent !important; 
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.5rem 1rem;
+  color: #00fff7;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ---------------- NEW CHATGPT-LIKE BEHAVIOR ---------------- */
+
+/* Container for entire layout (left + right) */
+.home-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Scrollable Chat Output Area inside Right Panel */
+.chat-output-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* ✅ messages go top-down */
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 0;
+  width: 100%;
+}
+
+/* Fixed Input Section at Bottom */
+.input-section {
+  padding: 15px 20px;
+  background-color: rgba(10, 15, 25, 0.9);
+  border-top: 1px solid #00f0ff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Input Box Centered & Styled */
+.input-box {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #00f0ff;
+  border-radius: 8px;
+  outline: none;
+  background: #0c0c1e;
+  color: white;
+}
+
+.input-box button {
+  background-color: cyan;
+  color: black;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  background-color: #00e0e0;
+}

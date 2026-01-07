@@ -1,0 +1,29 @@
+/* ProfilePage.css */
+.profile {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 25px;
+  background: rgba(10, 10, 35, 0.85);
+  border: 1px solid #00f7ff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #00f7ff;
+}
+
+.profile h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px #00f7ff;
+}
+
+.profile p {
+  font-size: 18px;
+  padding: 8px 12px;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.2) inset;
+  text-shadow: 0 0 3px #00f7ff;
+  margin: 10px 0;
+}

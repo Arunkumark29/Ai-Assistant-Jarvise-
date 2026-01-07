@@ -1,0 +1,268 @@
+/* Overall container */
+.jarvis-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  background: rgba(10, 10, 25, 0.9);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.jarvis-container h2 {
+  text-align: center;
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+/* Form Section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-section input {
+  padding: 10px;
+  border: 1px solid rgba(0, 229, 255, 0.5);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section input:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+/* Buttons Row */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 10px;
+  background: #00e5ff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+  background: #00b3cc;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+}
+
+.buttons .cancel {
+  background: #ff4d4d;
+  color: white;
+}
+
+.buttons .cancel:hover {
+  background: #cc0000;
+}
+
+/* Saved Commands List */
+.command-list {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.command-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.3s ease;
+}
+
+.command-list li:hover {
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.cmd-name {
+  font-weight: bold;
+  color: #00e5ff;
+}
+
+.cmd-url {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+.actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.actions .edit {
+  background: #ffc107;
+  color: #000;
+}
+
+.actions .edit:hover {
+  background: #e0a800;
+}
+
+.actions .delete {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.actions .delete:hover {
+  background: #cc0000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* EDIT button - glowing blue animation */
+.actions .edit {
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.actions .edit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 229, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+.actions .edit:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+  color: #fff;
+}
+
+.actions .edit:hover::before {
+  left: 0;
+}
+
+/* DELETE button - pulsing red animation */
+.actions .delete {
+  background: transparent;
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.actions .delete:hover {
+  color: white;
+  background: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+.actions .delete:active {
+  transform: scale(0.95);
+}
+
+/* Pulse animation for Delete button */
+.actions .delete {
+  animation: redPulse 1.5s infinite;
+}
+
+@keyframes redPulse {
+  0% { box-shadow: 0 0 5px rgba(255, 77, 77, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+  100% { box-shadow: 0 0 5px rgba(255, 77, 77, 0.4); }
+}
+
+/* BACK TO FORM button - glowing yellow animation */
+.buttons .cancel {
+  background: transparent;
+  color: #ffcc00;
+  border: 1px solid #ffcc00;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.buttons .cancel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 204, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+.buttons .cancel:hover {
+  color: #000;
+  background: #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.9);
+}
+
+.buttons .cancel:hover::before {
+  left: 0;
+}
+.saved-commands-container {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(10, 10, 25, 0.9);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+
+  /* scrolling behaviour */
+  max-height: 300px;       /* adjust as needed */
+  overflow-y: auto;        /* enable scroll when content exceeds max height */
+}
+
+/* Optional: custom scrollbar for Jarvis style */
+.saved-commands-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.saved-commands-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.saved-commands-container::-webkit-scrollbar-thumb {
+  background: #00e5ff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+}

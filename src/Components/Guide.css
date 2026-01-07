@@ -1,0 +1,48 @@
+.guide-container {
+  width: 90%;
+  max-width: 800px;
+  height: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ffff88;
+  overflow-y: auto;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff;
+  backdrop-filter: blur(8px);
+  scroll-behavior: smooth;
+}
+
+.guide-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 5px #00ffffaa;
+  letter-spacing: 1px;
+}
+
+.guide-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.guide-section {
+  border-left: 3px solid #00ffff;
+  padding-left: 15px;
+  margin-bottom: 25px;
+  transition: background 0.3s;
+}
+
+.guide-section:hover {
+  background: rgba(0, 255, 255, 0.1);
+}
+
+.guide-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  text-shadow: 0 0 3px #00ffcc99;
+}

@@ -1,0 +1,127 @@
+/* Base reset and font */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Container */
+.signin-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: radial-gradient(circle, #0d0d0d 30%, #000000 100%);
+}
+
+/* Animated Background Light Swirls */
+.bg-effects {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 180deg, #00ffff, #000, #9900ff, #000);
+  animation: rotateGlow 40s linear infinite;
+  opacity: 0.07;
+  filter: blur(150px);
+  z-index: 0;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card */
+.signin-card {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 420px;
+  padding: 2.5rem;
+  border-radius: 18px;
+  background: rgba(20, 20, 30, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+/* Heading */
+.signin-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00ffee;
+  text-shadow: 0 0 5px #00ffee, 0 0 12px #0066cc;
+  letter-spacing: 1px;
+}
+
+/* Form Styles */
+.signin-form .form-group {
+  margin-bottom: 1.3rem;
+}
+
+.signin-form label {
+  display: block;
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 0.4rem;
+}
+
+.signin-form input {
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.signin-form input:focus {
+  border-color: #00ffee;
+  box-shadow: 0 0 8px #00ffee;
+  outline: none;
+}
+
+/* Button */
+.signin-button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, #00ffee, #0055ff);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffee88;
+  transition: 0.3s ease;
+}
+
+.signin-button:hover {
+  background: linear-gradient(135deg, #00ccff, #0033cc);
+  box-shadow: 0 0 18px #00ffffaa;
+}
+
+/* Footer Text */
+.signin-footer {
+  margin-top: 1.8rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.signin-footer a {
+  color: #00ffee;
+  text-decoration: none;
+}
+
+.signin-footer a:hover {
+  text-decoration: underline;
+  color: #00ccff;
+}
